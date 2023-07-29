@@ -15,19 +15,31 @@
         {{ site.data.locales[include.lang].meta | replace: ':PLATFORM', _platform | replace: ':THEME', _theme }}
       </p>
 
+      {% assign founded_year = 'July 29, 2023' | date: '%Y' %}
+      {% assign current_year = 'now' | date: '%Y' %}
+      {% if current_year == founded_year %}
+        {% assign current_year = false %}
+      {% endif %}
+
       <p>
-        {{- '©' }}
-        {{ 'now' | date: '%Y' }}
+        {{- 'Copyright ©' }}
+        2023
+        {% if current_year %}- {{ current_year }}{% endif %}
         <a href="{{ site.social.links[0] }}">{{ site.social.name }}</a>.
         {% if site.data.locales[include.lang].copyright.brief %}
-          <span
+          <!-- <span
             data-bs-toggle="tooltip"
             data-bs-placement="top"
-            title="{{ site.data.locales[include.lang].copyright.verbose }}"
-          >
+            title="All content and posts on this site are copyright Roman James {{ copyright_years }}, All Rights Reserved. No part of this site's content may be reproduced or republished without permission."
+          > -->
+          <span>
             {{- site.data.locales[include.lang].copyright.brief -}}
           </span>
         {% endif %}
+      </p>
+
+      <p>
+        <a href="/legal">Legal</a>
       </p>
     </div>
   </div>

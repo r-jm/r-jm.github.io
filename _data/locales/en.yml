@@ -29,16 +29,15 @@ panel:
 
 copyright:
   # Shown at the bottom of the post
-  license:
-    template: This post is licensed under :LICENSE_NAME by the author.
-    name: CC BY 4.0
-    link: https://creativecommons.org/licenses/by/4.0/
+  # license:
+    # template: This post is licensed under :LICENSE_NAME by the author.
+    # name: All Rights Reserved
+    # link: https://www.copyright.gov/title17/
 
   # Displayed in the footer
-  brief: Some rights reserved.
-  verbose: >-
-    Except where otherwise noted, the blog posts on this site are licensed
-    under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.
+  brief: All rights reserved.
+  # verbose: >-
+  #   All content and posts on this site are copyright Roman James 2023 - , All Rights Reserved. No part of this site's content may be reproduced or republished without permission.
 
 meta: Using the :PLATFORM theme :THEME
 

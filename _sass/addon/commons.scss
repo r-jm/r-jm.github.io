@@ -186,6 +186,7 @@ footer {
 
   a {
     @extend %text-color;
+    border-bottom: 1px solid var(--link-underline-color);
 
     &:hover {
       @extend %link-hover;
@@ -1374,9 +1375,9 @@ $btn-mb: 0.5rem;
   footer {
     p {
       width: auto;
-      &:last-child {
+      &:last-child, &:nth-child(2) {
         &::before {
-          content: '-';
+          content: '•';
           margin: 0 0.75rem;
           opacity: 0.8;
         }

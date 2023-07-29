@@ -11,7 +11,7 @@
 
 <!-- layout specified -->
 
-{% if page.layout == 'post' or page.layout == 'page' or page.layout == 'home' %}
+{% if page.layout == 'post' or page.layout == 'page' or page.layout == 'home' or page.layout == 'page-with-toc' %}
   {% assign urls = urls | append: ',' | append: site.data.origin[type].lazysizes.js %}
 
   {% unless page.layout == 'home' %}
@@ -30,6 +30,7 @@
   or page.layout == 'archives'
   or page.layout == 'category'
   or page.layout == 'tag'
+  or page.layout == 'page-with-toc'
 %}
   {% assign locale = site.lang | split: '-' | first %}
 
@@ -46,7 +47,7 @@
   %}
 {% endif %}
 
-{% if page.content contains '<h2' or page.content contains '<h3' and site.toc and page.toc %}
+{% if page.content contains '## ' or page.content contains '<h2' or page.content contains '<h3' and site.toc and page.toc %}
   {% assign urls = urls | append: ',' | append: site.data.origin[type].toc.js %}
 {% endif %}
 
@@ -57,7 +58,7 @@
 {% include jsdelivr-combine.html urls=urls %}
 
 {% case page.layout %}
-  {% when 'home', 'categories', 'post', 'page' %}
+  {% when 'home', 'categories', 'post', 'page', 'page-with-toc' %}
     {% assign js = page.layout %}
   {% when 'archives', 'category', 'tag' %}
     {% assign js = 'misc' %}

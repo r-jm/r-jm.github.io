@@ -18,7 +18,12 @@ permalink: /feed.xml
   <link rel="alternate" type="text/html" hreflang="{{ site.alt_lang | default: site.lang }}"
     href="{{ '/' | absolute_url }}"/>
   <generator uri="https://jekyllrb.com/" version="{{ jekyll.version }}">Jekyll</generator>
-  <rights> © {{ 'now' | date: '%Y' }} {{ site.social.name }} </rights>
+  {% assign founded_year = 'July 29, 2023' | date: '%Y' %}
+  {% assign current_year = 'now' | date: '%Y' %}
+  {% if current_year == founded_year %}
+    {% assign current_year = false %}
+  {% endif %}
+  <rights>Copyright © 2023{% if current_year %} - {{ current_year }}{% endif %} {{ site.social.name }} </rights>
   <icon>{{ site.baseurl }}/assets/img/favicons/favicon.ico</icon>
   <logo>{{ site.baseurl }}/assets/img/favicons/favicon-96x96.png</logo>
 
