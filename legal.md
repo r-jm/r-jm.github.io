@@ -1,6 +1,7 @@
 ---
 layout: page-with-toc
 title: "Legal Policies, Terms & Disclosures"
+permalink: /legal
 toc: true
 ---
 
