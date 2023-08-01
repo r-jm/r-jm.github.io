@@ -24,8 +24,8 @@ permalink: /feed.xml
     {% assign current_year = false %}
   {% endif %}
   <rights>Copyright © 2023{% if current_year %} - {{ current_year }}{% endif %} {{ site.social.name }} </rights>
-  <icon>{{ site.baseurl }}/assets/img/favicons/favicon.ico</icon>
-  <logo>{{ site.baseurl }}/assets/img/favicons/favicon-96x96.png</logo>
+  <icon>{{ site.baseurl }}/assets/img/favicons/favicon.ico?v=51053</icon>
+  <logo>{{ site.baseurl }}/assets/img/favicons/favicon-96x96.png?v=51053</logo>
 
 {% for post in site.posts limit: 5 %}
   {% assign post_absolute_url = post.url | absolute_url %}
